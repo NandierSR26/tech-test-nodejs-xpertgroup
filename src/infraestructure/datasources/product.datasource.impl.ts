@@ -12,7 +12,7 @@ export class ProductDatasourceImpl implements ProductDatasource {
     const product = await ProductModel.findById(id);
 
     if (!product) {
-      throw new Error("Product not found");
+      throw ("Product not found");
     }
     return ProductEntity.fromObject(product);
   }
