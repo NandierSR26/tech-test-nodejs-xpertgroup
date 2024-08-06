@@ -14,10 +14,6 @@ const productSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  createdAt: {
-    type: Date,
-    default: new Date()
-  },
 
 });
 
