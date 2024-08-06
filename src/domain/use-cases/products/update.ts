@@ -4,7 +4,7 @@ import { CreateProductDto } from './../../dtos/products/create-product.dto';
 
 
 export interface UpdateProductUseCase {
-  execute( createProductDto: CreateProductDto ): Promise<ProductEntity>
+  execute( id: string, createProductDto: CreateProductDto ): Promise<ProductEntity>
 }
 
 export class updateProduct implements UpdateProductUseCase {
@@ -13,8 +13,8 @@ export class updateProduct implements UpdateProductUseCase {
     private readonly repository: ProductRepository
   ) {}
 
-  execute(createProductDto: CreateProductDto): Promise<ProductEntity> {
-    return this.repository.update(createProductDto);
+  execute( id: string, createProductDto: CreateProductDto): Promise<ProductEntity> {
+    return this.repository.update(id, createProductDto);
   }
 
 }

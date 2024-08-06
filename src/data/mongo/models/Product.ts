@@ -18,4 +18,4 @@ const productSchema = new mongoose.Schema({
 });
 
 
-export const LogModel = mongoose.model('Product', productSchema );
+export const ProductModel = mongoose.model('Product', productSchema );
