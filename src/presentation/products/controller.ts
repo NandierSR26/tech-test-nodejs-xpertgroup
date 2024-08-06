@@ -38,7 +38,7 @@ export class ProductController {
     if(error) return res.status(400).json({ error });
 
     new updateProduct( this.repository )
-      .execute( req.params.id, req.body)
+      .execute( req.params.id, createProductDto!)
       .then(product => res.json(product))
       .catch(error => res.status(400).json({ error }));
 

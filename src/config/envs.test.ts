@@ -5,7 +5,7 @@ describe("envs.plugin.ts", () => {
     expect(envs).toEqual({
       PORT: 3000,
       MONGO_URL: "mongodb://nandier:nandier123@localhost:27018",
-      MONGO_DB_NAME: "XpertgroupProducts",
+      MONGO_DB_NAME: "XpertgroupProducts_TEST",
       MONGO_USER: "nandier",
       MONGO_PASS: "nandier123",
     });
