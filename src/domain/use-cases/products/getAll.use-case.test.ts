@@ -21,7 +21,6 @@ describe('Testing getAll-products use case', () => {
 
     const result = await getAllProductUseCase.execute();
 
-    console.log({result, productEntity})
     expect(result).toEqual(productEntity);
   });
 

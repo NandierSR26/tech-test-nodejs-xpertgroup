@@ -17,4 +17,29 @@ describe("Product entity", () => {
     expect(product.price).toBe(dataObj.price);
     expect(product.amount).toBe(dataObj.amount);
   });
+
+  test('should throw an error if id is missing', () => {
+    const obj = { name: 'Product1', price: 100, amount: 10 };
+
+    expect(() => ProductEntity.fromObject(obj)).toThrow('Id is required');
+  });
+
+  test('should throw an error if name is missing', () => {
+    const obj = { id: '1', price: 100, amount: 10 };
+
+    expect(() => ProductEntity.fromObject(obj)).toThrow('name is required');
+  });
+
+  test('should throw an error if price is missing', () => {
+    const obj = { id: '1', name: 'Product1', amount: 10 };
+
+    expect(() => ProductEntity.fromObject(obj)).toThrow('price is required');
+  });
+
+  test('should throw an error if amount is missing', () => {
+    const obj = { id: '1', name: 'Product1', price: 100 };
+
+    expect(() => ProductEntity.fromObject(obj)).toThrow('amount is required');
+  });
+
 });
