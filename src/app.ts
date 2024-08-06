@@ -1,3 +1,4 @@
+import { envs } from "./config/envs"
 import { MongoDatabase } from "./data/mongo/init"
 import { AppRouter } from "./presentation/router"
 import { Server } from "./presentation/server"
@@ -9,8 +10,8 @@ import { Server } from "./presentation/server"
   })
 
   await MongoDatabase.connect({
-    dbName: '',
-    mongoUrl: ''
+    dbName: envs.MONGO_DB_NAME,
+    mongoUrl: envs.MONGO_URL
   })
 
   server.start();
